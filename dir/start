@@ -1,0 +1,11 @@
+#!/bin/sh 
+mkdir -p /etc/lighttpd/conf.d
+mkdir -p /srv/www/htdocs
+mv -n /mytemp/lighttpd.conf /etc/lighttpd/lighttpd.conf
+mv -n /mytemp/modules.conf /etc/lighttpd/modules.conf
+mv -n /mytemp/conf.d/access_log.conf /etc/lighttpd/conf.d/access_log.conf
+mv -n /mytemp/conf.d/mime.conf /etc/lighttpd/conf.d/mime.conf
+mv -n /mytemp/conf.d/dirlisting.conf /etc/lighttpd/conf.d/dirlisting.conf
+mv -n /mytemp/index.html /srv/www/htdocs/index.html 
+rm -rf /mytemp
+exec lighttpd -D -f /etc/lighttpd/lighttpd.conf
