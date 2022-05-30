@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM arm64v8/node:current-alpine3.15
+FROM alpine:latest
 
 # Define for readability
 ENV LIGHTTPD_VER=1.4.64-r0 \
